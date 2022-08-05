@@ -63,6 +63,7 @@ public class BaseTest implements IAutoConst {
 	@BeforeMethod(alwaysRun = true)
 	public void openApp(@Optional(CONFIG_PATH) String config) {
 		String browser = Utility.getProperty(config, "BROWSER");
+		test.info("Browser is : " + browser);
 		String grid = Utility.getProperty(config, "GRID");
 		if (grid.equalsIgnoreCase("Yes")) {
 			try {
@@ -102,6 +103,7 @@ public class BaseTest implements IAutoConst {
 
 	@AfterMethod(alwaysRun = true)
 	public void closeApp(ITestResult result, Method testMethod) throws IOException {
+		
 		String testScriptName = testMethod.getName();
 		int status = result.getStatus();
 		if (status == 2) {

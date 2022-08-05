@@ -61,7 +61,7 @@ public class Utility {
 			int rc = sheet.getLastRowNum();
 			for (int i = 1; i <= rc; i++) {
 				try {
-					short cc = sheet.getRow(i).getLastCellNum();
+					int cc = sheet.getRow(i).getLastCellNum();
 					String[] cell = new String[cc];
 					for (int j = 0; j < cc; j++) {
 						try {
