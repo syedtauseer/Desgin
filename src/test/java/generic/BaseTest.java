@@ -113,20 +113,14 @@ public class BaseTest implements IAutoConst {
 				// to insert screenshot at starting in report
 				test.addScreenCaptureFromPath("./../img/test.png");
 				// to insert screenshot at step failed in report
-				String path = "E:/homework/desgin/target/img";
-				if (new File(path).exists()) {
-					System.out.println("file downloaded successfully ");
 
-				} else {
-					System.out.println("no file exists");
-				}
-				test.fail(MediaEntityBuilder.createScreenCaptureFromPath("./../img/" + testScriptName + IMAGE_EXTENSION)
-						.build());
+				test.fail(MediaEntityBuilder.createScreenCaptureFromPath("./../img/" + testScriptName + IMAGE_EXTENSION).build());
 				String msg = result.getThrowable().getMessage();
 				test.info("Reson For Script Failed : " + msg);
 			} catch (Exception e) {
 
 			}
+
 		}
 		driver.quit();
 	}

@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="script.InvalidLogin">
+      <class name="script.TestLogin">
         <methods>
           <include name="openApp"/>
           <include name="initReport"/>
-          <include name="testInValidLogin"/>
           <include name="createTest"/>
           <include name="closeApp"/>
           <include name="publishReport"/>
+          <include name="testValidLogin" invocation-numbers="0"/>
         </methods>
-      </class> <!-- script.InvalidLogin -->
+      </class> <!-- script.TestLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
