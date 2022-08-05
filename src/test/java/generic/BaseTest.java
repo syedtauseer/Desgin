@@ -1,6 +1,7 @@
 package generic;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -100,27 +101,23 @@ public class BaseTest implements IAutoConst {
 	}
 
 	@AfterMethod(alwaysRun = true)
-	public void closeApp(ITestResult result, Method testMethod) {
+	public void closeApp(ITestResult result, Method testMethod) throws IOException {
 		String testScriptName = testMethod.getName();
 		int status = result.getStatus();
 		if (status == 2) {
-			try {
-				String timeStamp = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss").format(new Date());
-				TakesScreenshot t = (TakesScreenshot) driver;
-				File scrFile = t.getScreenshotAs(OutputType.FILE);
-				File dstpath = new File(SCREENSHOT_PATH + timeStamp + "-" + testScriptName + IMAGE_EXTENSION);
-				FileUtils.copyFile(scrFile, dstpath);
-				// to insert screenshot at starting in report
-				test.addScreenCaptureFromPath("./../img/test.png");
-				// to insert screenshot at step failed in report
+			String timeStamp = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss").format(new Date());
+			TakesScreenshot t = (TakesScreenshot) driver;
+			File scrFile = t.getScreenshotAs(OutputType.FILE);
+			File dstpath = new File(SCREENSHOT_PATH + timeStamp + "-" + testScriptName + IMAGE_EXTENSION);
+			FileUtils.copyFile(scrFile, dstpath);
+			// to insert screenshot at starting in report
+			test.addScreenCaptureFromPath("./../img/test.png");
+			// to insert screenshot at step failed in report
 
-				test.fail(MediaEntityBuilder.createScreenCaptureFromPath("./../img/" + testScriptName + IMAGE_EXTENSION).build());
-				String msg = result.getThrowable().getMessage();
-				test.info("Reson For Script Failed : " + msg);
-			} catch (Exception e) {
-
-			}
-
+			test.fail(MediaEntityBuilder.createScreenCaptureFromPath("./../img/" + testScriptName + IMAGE_EXTENSION)
+					.build());
+			String msg = result.getThrowable().getMessage();
+			test.info("Reson For Script Failed : " + msg);
 		}
 		driver.quit();
 	}
