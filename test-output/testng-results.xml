@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
+<testng-results ignored="2" total="4" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-05T19:02:48 IST" name="Suite" finished-at="2022-08-05T19:03:26 IST" duration-ms="38641">
+  <suite started-at="2022-08-05T19:32:33 IST" name="Suite" finished-at="2022-08-05T19:32:43 IST" duration-ms="9754">
     <groups>
       <group name="smoke">
-        <method signature="InvalidLogin.testInValidLogin(java.lang.String,java.lang.String)[pri:2, instance:script.InvalidLogin@5824a83d]" name="testInValidLogin" class="script.InvalidLogin"/>
-        <method signature="TestLogin.testValidLogin(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:script.TestLogin@45099dd3]" name="testValidLogin" class="script.TestLogin"/>
+        <method signature="InvalidLogin.testInValidLogin(java.lang.String,java.lang.String)[pri:2, instance:script.InvalidLogin@5e600dd5]" name="testInValidLogin" class="script.InvalidLogin"/>
+        <method signature="TestLogin.testValidLogin(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:script.TestLogin@5824a83d]" name="testValidLogin" class="script.TestLogin"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2022-08-05T19:02:48 IST" name="Test" finished-at="2022-08-05T19:03:26 IST" duration-ms="38641">
+    <test started-at="2022-08-05T19:32:33 IST" name="Test1" finished-at="2022-08-05T19:32:43 IST" duration-ms="9754">
       <class name="script.InvalidLogin">
-        <test-method is-config="true" signature="initReport()[pri:0, instance:script.InvalidLogin@5824a83d]" started-at="2022-08-05T19:02:47 IST" name="initReport" finished-at="2022-08-05T19:02:48 IST" duration-ms="272" status="PASS">
+        <test-method is-config="true" signature="initReport()[pri:0, instance:script.InvalidLogin@5e600dd5]" started-at="2022-08-05T19:32:33 IST" name="initReport" finished-at="2022-08-05T19:32:33 IST" duration-ms="361" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initReport -->
-        <test-method is-config="true" signature="openApp(java.lang.String)[pri:0, instance:script.InvalidLogin@5824a83d]" started-at="2022-08-05T19:03:15 IST" name="openApp" finished-at="2022-08-05T19:03:25 IST" duration-ms="9965" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[./config.properties]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openApp -->
-        <test-method is-config="true" signature="createTest(java.lang.reflect.Method)[pri:0, instance:script.InvalidLogin@5824a83d]" started-at="2022-08-05T19:03:15 IST" name="createTest" finished-at="2022-08-05T19:03:15 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="createTest(java.lang.reflect.Method)[pri:0, instance:script.InvalidLogin@5e600dd5]" started-at="2022-08-05T19:32:39 IST" name="createTest" finished-at="2022-08-05T19:32:39 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +26,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createTest -->
-        <test-method signature="testInValidLogin(java.lang.String,java.lang.String)[pri:2, instance:script.InvalidLogin@5824a83d]" started-at="2022-08-05T19:03:25 IST" name="testInValidLogin" data-provider="getData" finished-at="2022-08-05T19:03:26 IST" duration-ms="1325" status="PASS">
+        <test-method is-config="true" signature="openApp(java.lang.String)[pri:0, instance:script.InvalidLogin@5e600dd5]" started-at="2022-08-05T19:32:39 IST" name="openApp" finished-at="2022-08-05T19:32:42 IST" duration-ms="2818" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[./config.properties]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openApp -->
+        <test-method signature="testInValidLogin(java.lang.String,java.lang.String)[pri:2, instance:script.InvalidLogin@5e600dd5]" started-at="2022-08-05T19:32:42 IST" name="testInValidLogin" data-provider="getData" finished-at="2022-08-05T19:32:42 IST" duration-ms="193" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -50,14 +50,88 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"username"}
+  (Session info: chrome=104.0.5112.81)
+  (Driver info: chromedriver=104.0.5112.29 (eff877e18f767c77fef0481a1cba402c8cbad404-refs/branch-heads/5112@{#422}),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-SP8UJ8Q', ip: '192.168.0.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [def32957dc334d3b88d3a2b3111d7f7a, findElement {using=id, value=username}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 104.0.5112.29 (eff877e18f76..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49300}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: Windows, platformName: ANY, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 104.0.5112.81, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: def32957dc334d3b88d3a2b3111...}
+Session ID: def32957dc334d3b88d3a2b3111d7f7a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"username"}
+  (Session info: chrome=104.0.5112.81)
+  (Driver info: chromedriver=104.0.5112.29 (eff877e18f767c77fef0481a1cba402c8cbad404-refs/branch-heads/5112@{#422}),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-SP8UJ8Q', ip: '192.168.0.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [def32957dc334d3b88d3a2b3111d7f7a, findElement {using=id, value=username}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 104.0.5112.29 (eff877e18f76..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49300}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: Windows, platformName: ANY, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 104.0.5112.81, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: def32957dc334d3b88d3a2b3111...}
+Session ID: def32957dc334d3b88d3a2b3111d7f7a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:217)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:169)
+at org.openqa.selenium.remote.codec.jwp.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:41)
+at org.openqa.selenium.remote.codec.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:83)
+at org.openqa.selenium.remote.codec.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:47)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:387)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:379)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy22.sendKeys(Unknown Source)
+at page.LoginPage.setUserName(LoginPage.java:28)
+at script.InvalidLogin.testInValidLogin(InvalidLogin.java:14)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testInValidLogin -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:script.InvalidLogin@5824a83d]" started-at="2022-08-05T19:03:26 IST" name="closeApp" finished-at="2022-08-05T19:03:26 IST" duration-ms="328" status="PASS">
+        <test-method is-config="true" signature="closeApp(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:script.InvalidLogin@5e600dd5]" started-at="2022-08-05T19:32:42 IST" name="closeApp" finished-at="2022-08-05T19:32:43 IST" duration-ms="582" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testInValidLogin status=SUCCESS method=InvalidLogin.testInValidLogin(java.lang.String,java.lang.String)[pri:2, instance:script.InvalidLogin@5824a83d] output={null}]]]>
+                <![CDATA[[TestResult name=testInValidLogin status=FAILURE method=InvalidLogin.testInValidLogin(java.lang.String,java.lang.String)[pri:2, instance:script.InvalidLogin@5e600dd5] output={null}]]]>
               </value>
             </param>
             <param index="1">
@@ -69,13 +143,13 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-        <test-method is-config="true" signature="publishReport()[pri:0, instance:script.InvalidLogin@5824a83d]" started-at="2022-08-05T19:03:26 IST" name="publishReport" finished-at="2022-08-05T19:03:27 IST" duration-ms="486" status="PASS">
+        <test-method is-config="true" signature="publishReport()[pri:0, instance:script.InvalidLogin@5e600dd5]" started-at="2022-08-05T19:32:43 IST" name="publishReport" finished-at="2022-08-05T19:32:43 IST" duration-ms="296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- publishReport -->
       </class> <!-- script.InvalidLogin -->
       <class name="script.TestLogin">
-        <test-method is-config="true" signature="createTest(java.lang.reflect.Method)[pri:0, instance:script.TestLogin@45099dd3]" started-at="2022-08-05T19:02:48 IST" name="createTest" finished-at="2022-08-05T19:02:48 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="createTest(java.lang.reflect.Method)[pri:0, instance:script.TestLogin@5824a83d]" started-at="2022-08-05T19:32:34 IST" name="createTest" finished-at="2022-08-05T19:32:34 IST" duration-ms="5" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -86,7 +160,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createTest -->
-        <test-method is-config="true" signature="openApp(java.lang.String)[pri:0, instance:script.TestLogin@45099dd3]" started-at="2022-08-05T19:02:48 IST" name="openApp" finished-at="2022-08-05T19:02:58 IST" duration-ms="9287" status="PASS">
+        <test-method is-config="true" signature="openApp(java.lang.String)[pri:0, instance:script.TestLogin@5824a83d]" started-at="2022-08-05T19:32:34 IST" name="openApp" finished-at="2022-08-05T19:32:38 IST" duration-ms="4347" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -97,7 +171,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openApp -->
-        <test-method signature="testValidLogin(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:script.TestLogin@45099dd3]" started-at="2022-08-05T19:02:58 IST" name="testValidLogin" data-provider="getData" finished-at="2022-08-05T19:03:14 IST" duration-ms="15737" status="PASS">
+        <test-method signature="testValidLogin(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:script.TestLogin@5824a83d]" started-at="2022-08-05T19:32:38 IST" name="testValidLogin" data-provider="getData" finished-at="2022-08-05T19:32:38 IST" duration-ms="229" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -115,14 +189,88 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"id","selector":"username"}
+  (Session info: chrome=104.0.5112.81)
+  (Driver info: chromedriver=104.0.5112.29 (eff877e18f767c77fef0481a1cba402c8cbad404-refs/branch-heads/5112@{#422}),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-SP8UJ8Q', ip: '192.168.0.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [ca18bd4736f04b8bb4a6f628158997ed, findElement {using=id, value=username}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 104.0.5112.29 (eff877e18f76..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49214}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: Windows, platformName: ANY, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 104.0.5112.81, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: ca18bd4736f04b8bb4a6f628158...}
+Session ID: ca18bd4736f04b8bb4a6f628158997ed]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"username"}
+  (Session info: chrome=104.0.5112.81)
+  (Driver info: chromedriver=104.0.5112.29 (eff877e18f767c77fef0481a1cba402c8cbad404-refs/branch-heads/5112@{#422}),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-SP8UJ8Q', ip: '192.168.0.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [ca18bd4736f04b8bb4a6f628158997ed, findElement {using=id, value=username}]
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 104.0.5112.29 (eff877e18f76..., userDataDir: C:\Users\ADMINI~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:49214}, handlesAlerts: true, hasMetadata: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: Windows, platformName: ANY, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 104.0.5112.81, webStorageEnabled: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: ca18bd4736f04b8bb4a6f628158...}
+Session ID: ca18bd4736f04b8bb4a6f628158997ed
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:217)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:169)
+at org.openqa.selenium.remote.codec.jwp.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:41)
+at org.openqa.selenium.remote.codec.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:83)
+at org.openqa.selenium.remote.codec.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:47)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:387)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:379)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy22.sendKeys(Unknown Source)
+at page.LoginPage.setUserName(LoginPage.java:28)
+at script.TestLogin.testValidLogin(TestLogin.java:15)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testValidLogin -->
-        <test-method is-config="true" signature="closeApp(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:script.TestLogin@45099dd3]" started-at="2022-08-05T19:03:14 IST" name="closeApp" finished-at="2022-08-05T19:03:15 IST" duration-ms="1156" status="PASS">
+        <test-method is-config="true" signature="closeApp(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:script.TestLogin@5824a83d]" started-at="2022-08-05T19:32:38 IST" name="closeApp" finished-at="2022-08-05T19:32:39 IST" duration-ms="706" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testValidLogin status=SUCCESS method=TestLogin.testValidLogin(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:script.TestLogin@45099dd3] output={null}]]]>
+                <![CDATA[[TestResult name=testValidLogin status=FAILURE method=TestLogin.testValidLogin(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:script.TestLogin@5824a83d] output={null}]]]>
               </value>
             </param>
             <param index="1">
@@ -135,6 +283,6 @@
           </reporter-output>
         </test-method> <!-- closeApp -->
       </class> <!-- script.TestLogin -->
-    </test> <!-- Test -->
+    </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 </testng-results>
